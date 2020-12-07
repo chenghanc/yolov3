@@ -1,5 +1,7 @@
 
-This repo adds new inference code `detect-track.py` for YOLOv4 in PyTorch. The code works on Linux, MacOS and Windows.
+## Person cross the yellow line
+
+This repo adds new inference code `detect-track.py` for YOLOv4 in PyTorch. Check if person stand behind the yellow line. The code works on Linux, MacOS and Windows.
 
 ## Inference
 
