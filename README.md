@@ -26,7 +26,7 @@ python detect-track.py --names data/coco.names --cfg cfg/yolov4.cfg --weights yo
     * B = B (xB, yB)
     * M = M (xM, yM) is the query point
 
-```python
+```python    
 def cpr(xA, yA, xB, yB, xM, yM):
     vec1 = (xB - xA, yB - yA)
     vec2 = (xB - xM, yB - yM)
@@ -38,8 +38,8 @@ def cpr(xA, yA, xB, yB, xM, yM):
     
     * <img src="https://render.githubusercontent.com/render/math?math=cp\,=\,cpr (x_1, y_1, x_2, y_2, x_n, y_n)">
     
-      * `if cp > 0:` **<img src="https://render.githubusercontent.com/render/math?math=point_n"> is on one side**
-      * `elif cp < 0:` **<img src="https://render.githubusercontent.com/render/math?math=point_n"> is on the other side**
-      * `else:` **<img src="https://render.githubusercontent.com/render/math?math=point_n"> is on the same line**
+      * `if cp > 0:` <img src="https://render.githubusercontent.com/render/math?math=(x_n, y_n)"> **is on one side**
+      * `elif cp < 0:` <img src="https://render.githubusercontent.com/render/math?math=(x_n, y_n)"> **is on the other side**
+      * `else:` <img src="https://render.githubusercontent.com/render/math?math=(x_n, y_n)"> **is on the same line**
 
 
