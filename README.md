@@ -34,8 +34,9 @@ def cpr(xA, yA, xB, yB, xM, yM):
     return crpr
 ```
 
-- #### Calculate cross product of two vectors (AB) and (BM)
+- #### Calculate cross product of two vectors
     * cp = cpr(x1,y1,x2,y2,xn,yn)
+    * cp = <img src="https://render.githubusercontent.com/render/math?math=cpr (x_1, y_1, x_2, y_2, x_n, y_n)">
     
       * `if cp > 0:` <img src="https://render.githubusercontent.com/render/math?math=point_n"> is on one side
       * `elif cp < 0:` <img src="https://render.githubusercontent.com/render/math?math=point_n"> is on the other side
