@@ -41,4 +41,8 @@ def cpr(xA, yA, xB, yB, xM, yM):
       * `elif cp < 0` point_n is on the other side
       * `else` point_n on the same line $`\sqrt{2}`$
 
+<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
 
+```math
+SE = \frac{\sigma}{\sqrt{n}}
+```
