@@ -34,7 +34,7 @@ def cpr(xA, yA, xB, yB, xM, yM):
     return crpr
 ```
 
-- #### Calculate cross product of two vectors
+- #### Calculate cross product of two vectors (12) and (2n)
     
     * `cp = cpr (x1, y1, x2, y2, xn, yn)`
 
