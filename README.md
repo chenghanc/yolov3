@@ -37,13 +37,10 @@ def cpr(xA, yA, xB, yB, xM, yM):
 - #### Calculate cross product of two vectors
     
     * <img src="https://render.githubusercontent.com/render/math?math=cp\,=\,cpr (x_1, y_1, x_2, y_2, x_n, y_n)">
-    * <pre xml:lang="latex">\sqrt{2}</pre>
     
-    \begin{aligned}
-    \dot{x} & = \sigma(y-x) \\
-    \dot{y} & = \rho x - y - xz \\
-    \dot{z} & = -\beta z + xy
-    \end{aligned}
+$$x=\sqrt{2}$$
+    
+
     
       * `if cp > 0:` <img src="https://render.githubusercontent.com/render/math?math=(x_n, y_n)"> **is on one side**
       * `elif cp < 0:` <img src="https://render.githubusercontent.com/render/math?math=(x_n, y_n)"> **is on the other side**
