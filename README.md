@@ -1,6 +1,10 @@
 
 ## Person cross the yellow line
 
+Design an algorithm to check if person stand cross the yellow line and thus send an alarm notification to control system. The method used in this scenario can be easily generalized to intrusion detection as long as the area is well defined and CCTV is fixed.
+
+
+
 This repo adds new inference code `detect-track.py` for YOLOv4 in PyTorch. Check if person stand behind the yellow line. The code works on Linux, MacOS and Windows.
 
 ## Inference
