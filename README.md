@@ -1,12 +1,12 @@
 
-## Person cross the yellow line
+## People do not stand behind the yellow line on the train platform
 
-Design an algorithm combined with **Yolov4** and check if person cross the yellow line and thus send an alarm notification to control system. The method used in this scenario can be easily generalized to intrusion detection as long as the area is well defined and CCTV is fixed. This repo adds new inference code `detect-track.py` for **Yolov4** in PyTorch. The code works on Linux, MacOS and Windows.
+Design an algorithm combined with **Yolov4** and check if people do not stand behind the yellow line and thus an alarm notification should be activated. The method used in this scenario can be easily generalized to intrusion detection as long as the area is well defined and CCTV is fixed. This repo adds new inference code `detect-track.py` for **Yolov4** in PyTorch. The code works on Linux, MacOS and Windows.
 
 ## Inference
 
 ```bash
-python3 detect.py --source ...
+python detect-track.py --names data/coco.names --cfg cfg/yolov4.cfg --weights yolov4.weights --img-size 608 --conf-thres 0.4 --iou-thres 0.6 --source CDS32-1300-1400cut3.mp4 --view-img
 ```
 
 - Image:  `--source file.jpg`
@@ -15,10 +15,6 @@ python3 detect.py --source ...
 - Webcam:  `--source 0`
 - RTSP stream:  `--source rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa`
 - HTTP stream:  `--source http://112.50.243.8/PLTV/88888888/224/3221225900/1.m3u8`
-
-**YOLOv3:** `python3 detect.py --cfg cfg/yolov3.cfg --weights yolov3.pt`  
-
-**YOLOv3-tiny:** `python3 detect.py --cfg cfg/yolov3-tiny.cfg --weights yolov3-tiny.pt`  
 
 
 ## mAP
