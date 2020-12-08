@@ -22,6 +22,10 @@ python detect-track.py --names data/coco.names --cfg cfg/yolov4.cfg --weights yo
 - #### Define the auxiliary lines beyond which an alarm notification should be activated
 - #### Define Cross Product of two vectors (AB) and (BM) where
 
+    * A = A (xA, yA)
+    * B = B (xB, yB)
+    * M = M (xM, yM) is the query point
+
 ```python
 def cpr(xA, yA, xB, yB, xM, yM):
     vec1 = (xB - xA, yB - yA)
@@ -30,13 +34,11 @@ def cpr(xA, yA, xB, yB, xM, yM):
     return crpr
 ```
 
-    * A = A (xA, yA)
-    * B = B (xB, yB)
-    * M = M (xM, yM) is the query point
-
-- #### Calculate cross product of two vectors (AB) and (BM) where
+- #### Calculate cross product of two vectors (AB) and (BM)
     * cp = cpr(x1,y1,x2,y2,xn,yn)
-      * 'if '
-      * 'else'
+    
+      * `if cp > 0`  point_n is on one side
+      * `elif cp < 0` point_n is on the other side
+      * `else` point_n on the same line $`\sqrt{2}`$
 
 
