@@ -4,6 +4,45 @@ from models import *  # set ONNX_EXPORT in models.py
 from utils.datasets import *
 from utils.utils import *
 
+# Structure for point in cartesian plane
+class point:
+     
+    def __init__(self):
+         
+        self.x = 0
+        self.y = 0
+  
+# Constant integers for directions
+RIGHT = 1
+LEFT = -1
+ZERO = 0
+  
+def directionOfPoint(A, B, P):
+     
+    global RIGHT, LEFT, ZERO
+     
+    # Subtracting co-ordinates of 
+    # point A from B and P, to 
+    # make A as origin
+    B.x -= A.x
+    B.y -= A.y
+    P.x -= A.x
+    P.y -= A.y
+  
+    # Determining cross Product
+    cross_product = B.x * P.y - B.y * P.x
+  
+    # Return RIGHT if cross product is positive
+    if (cross_product > 0):
+        return RIGHT
+         
+    # Return LEFT if cross product is negative
+    if (cross_product < 0):
+        return LEFT
+  
+    # Return ZERO if cross product is zero
+    return ZERO
+
 # Two vectors (AB) and (BM) where M(xM,yM) is the query point
 def cpr(xA, yA, xB, yB, xM, yM):
     vec1 = (xB - xA, yB - yA)
@@ -182,6 +221,7 @@ def detect(save_img=False):
                         if xp < 0 and cp > 0:
                             plot_one_box(xyxy, im0, label=label, color=(0,0,255)) # red   # point_n is on one side
                             cv2.putText(im0,"Alarm!!", (40,40),cv2.FONT_HERSHEY_SIMPLEX, 1.6, (0,0,255), 3)
+                            cv2.circle(im0,(int(xn),int(yn)),2,(0,0,255),-1)
                             alert={'alert':True}
                         else:
                             plot_one_box(xyxy, im0, label=label, color=(255,0,0)) # blue  # point_n is on the other side
@@ -190,6 +230,34 @@ def detect(save_img=False):
                         if alert['alert']==True:
                         	alarm = '\n\nAlarm!! Person cross the yellow line and an alarm notification should be activated!!\n\n'
                         	print(alarm)
+
+                        """
+                        Start of:
+                        Determine direction of query point P(xn, yn)
+                        """  
+                        A = point()
+                        B = point()
+                        P = point()
+
+                        A.x = boundary4  #-30
+                        A.y = boundary   #10  # A(-30, 10)
+                        B.x = boundary1  #29
+                        B.y = 0          #-15 # B(29, -15)
+                        P.x = xn         #15
+                        P.y = yn         #28  # P(15, 28)
+
+                        direction = directionOfPoint(A, B, P)
+
+                        if (direction == -1):
+                            print("Left Direction")
+                        elif (direction == 1):
+                            print("Right Direction")
+                        else:
+                            print("Point is on the Line")
+                        """
+                        End of:
+                        Determine direction of query point P(xn, yn)
+                        """  
 
             # Print time (inference + NMS)
             print('%sDone. (%.3fs)' % (s, t2 - t1))
