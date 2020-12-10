@@ -20,7 +20,8 @@ ZERO = 0
 def directionOfPoint(A, B, P):
      
     global RIGHT, LEFT, ZERO
-     
+    
+    # Two vectors (AB) and (AP) where P(x,y) is the query point
     # Subtracting co-ordinates of 
     # point A from B and P, to 
     # make A as origin
@@ -43,11 +44,19 @@ def directionOfPoint(A, B, P):
     # Return ZERO if cross product is zero
     return ZERO
 
-# Two vectors (AB) and (BM) where M(xM,yM) is the query point
+
 def cpr(xA, yA, xB, yB, xM, yM):
+
+    # Two vectors (AB) and (MB) where M(xM,yM) is the query point
+    # Subtracting co-ordinate of point A from B
     vec1 = (xB - xA, yB - yA)
+
+    # Subtracting co-ordinate of point M from B
     vec2 = (xB - xM, yB - yM)
+
+    # Determining cross product
     crpr = vec1[0]*vec2[1] - vec1[1]*vec2[0]
+
     return crpr
 
 def detect(save_img=False):
