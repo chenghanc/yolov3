@@ -50,6 +50,9 @@ def cpr(xA, yA, xB, yB, xM, yM):
       * elif cp < 0: `(xn, yn)` **is on the other side**
       * else:        `(xn, yn)` **is on the same line**
 
+---
 
+## Example
+![](test-yellow.gif)
 
 
