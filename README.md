@@ -61,12 +61,6 @@ else:
 .
 ```
 
-    * `cp = cpr (x1, y1, x2, y2, xn, yn)`
-
-      * if cp > 0:   `(xn, yn)` **is on one side**
-      * elif cp < 0: `(xn, yn)` **is on the other side**
-      * else:        `(xn, yn)` **is on the same line**
-
 - #### Remarks: The generalization to multiple lines or polygons is straightforward, e.g. 
 
 ```python    
