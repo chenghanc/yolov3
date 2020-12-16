@@ -186,27 +186,29 @@ def detect(save_img=False):
 
                     if save_img or view_img:  # Add bbox to image
                         # set the boundary (arbitrary)
-                        boundary1 = 350   # 880
-                        boundary  = 480   # 900
-                        boundary4 = 300  # 1920
-                        auxline   = 150
+                        boundary1 = 1310   # 880 350
+                        boundary  = 440    # 900 480
+                        boundary4 = 870    # 1920 300
+                        auxline   = 60
+                        auxline1  = 40
+                        auxline2  = 130
                         # define the yellow line beyond which the alert should be activated
                         line_thickness = 2
                         x1, y1 = boundary1, 0
                         x2, y2 = boundary4, boundary
                         cv2.line(im0, (x1, y1), (x2, y2), (0, 255, 0), thickness=line_thickness)
                         # Auxiliary line: Left or Right
-                        x3, y3 = boundary1 - auxline, 0
-                        x4, y4 = boundary4 - auxline, boundary
-                        cv2.line(im0, (x3, y3), (x4, y4), (0, 255, 0), thickness=5)
+                        x3, y3 = x2, y2
+                        x4, y4 = x2 - auxline1, y2 + auxline
+                        cv2.line(im0, (x3, y3), (x4, y4), (0, 255, 255), thickness=line_thickness)
                         # Auxiliary line: Top
-                        x5, y5 = x3, y3
-                        x6, y6 = x1, y1
-                        cv2.line(im0, (x5, y5), (x6, y6), (0, 255, 0), thickness=5)
+                        x5, y5 = x4, y4
+                        x6, y6 = x4 - auxline2, 1080
+                        cv2.line(im0, (x5, y5), (x6, y6), (255, 255, 0), thickness=line_thickness)
                         # Auxiliary line: Bottom
-                        x7, y7 = x4, y4
-                        x8, y8 = x2, y2
-                        cv2.line(im0, (x7, y7), (x8, y8), (0, 255, 0), thickness=8)
+                        x7, y7 = x3 - 80, 0
+                        x8, y8 = x4 - 380, 1080
+                        #cv2.line(im0, (x7, y7), (x8, y8), (255, 255, 255), thickness=8)
                         #
                         label = '%s' % (names[int(cls)])
                         labelc = '%s %.2f' % (names[int(cls)], conf)
@@ -220,14 +222,17 @@ def detect(save_img=False):
                         # vector2
                         #v2 = (x2 - xn, y2 - yn)
                         # calculate cross product
-                        xp = cpr(x1,y1,x2,y2,xn,yn)
-                        cp = cpr(x3,y3,x4,y4,xn,yn)
+                        cp1 = cpr(x1,y1,x2,y2,xn,yn)
+                        cp2 = cpr(x3,y3,x4,y4,xn,yn)
+                        cp3 = cpr(x5,y5,x6,y6,xn,yn)
+                        acp = cpr(x7,y7,x8,y8,xn,yn)
                         #print(x6-x5,x8-x7)
                         # Counting Person
                         #cv2.putText(im0,"Counting Person = " + str(int(n)), (400,20),cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0,0,0), 1)
                         if label != 'person':
                             continue
-                        if xp < 0 and cp > 0:
+                        if cp1 < 0 or cp2 < 0 or cp3 < 0:
+                        #if (cp1 < 0 or cp2 < 0 or cp3 < 0) and (acp) > 0:
                             plot_one_box(xyxy, im0, label=label, color=(0,0,255)) # red   # point_n is on one side
                             cv2.putText(im0,"Alarm!!", (40,40),cv2.FONT_HERSHEY_SIMPLEX, 1.6, (0,0,255), 3)
                             cv2.circle(im0,(int(xn),int(yn)),2,(0,0,255),-1)
