@@ -50,6 +50,26 @@ def cpr(xA, yA, xB, yB, xM, yM):
       * elif cp < 0: `(xn, yn)` **is on the other side**
       * else:        `(xn, yn)` **is on the same line**
 
+- #### Remarks: The generalization to multiple lines or polygons is straightforward, e.g. 
+
+```python    
+.
+.
+.
+cp1 = cpr(x1,y1,x2,y2,xn,yn)
+cp2 = cpr(x3,y3,x4,y4,xn,yn)
+cp3 = cpr(x5,y5,x6,y6,xn,yn)
+acp = cpr(x7,y7,x8,y8,xn,yn)
+
+if (cp1 < 0 or cp2 < 0 or cp3 < 0) and (acp) > 0:
+    print("Point (xn,yn) is on one side")
+else:
+    print("Point (xn,yn) is on the other side")
+.
+.
+.
+```
+
 ---
 
 ## Example
