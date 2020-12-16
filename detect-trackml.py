@@ -206,8 +206,8 @@ def detect(save_img=False):
                         x6, y6 = x4 - auxline2, 1080
                         cv2.line(im0, (x5, y5), (x6, y6), (255, 255, 0), thickness=line_thickness)
                         # Auxiliary line: Bottom
-                        x7, y7 = x3 - 80, 0
-                        x8, y8 = x4 - 380, 1080
+                        x7, y7 = x3 + 120, 0
+                        x8, y8 = x4 - 400, 1080
                         #cv2.line(im0, (x7, y7), (x8, y8), (255, 255, 255), thickness=8)
                         #
                         label = '%s' % (names[int(cls)])
