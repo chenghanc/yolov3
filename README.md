@@ -43,7 +43,24 @@ def cpr(xA, yA, xB, yB, xM, yM):
 ```
 
 - #### Calculate cross product of two vectors
-    
+
+```python    
+.
+.
+.
+cp = cpr(x1,y1,x2,y2,xn,yn)
+
+if cp < 0:
+    print("Point (xn,yn) is on one side")
+elif cp > 0:
+    print("Point (xn,yn) is on the other side")
+else:
+    print("Point (xn,yn) is on the same line")
+.
+.
+.
+```
+
     * `cp = cpr (x1, y1, x2, y2, xn, yn)`
 
       * if cp > 0:   `(xn, yn)` **is on one side**
