@@ -231,8 +231,8 @@ def detect(save_img=False):
                         #cv2.putText(im0,"Counting Person = " + str(int(n)), (400,20),cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0,0,0), 1)
                         if label != 'person':
                             continue
-                        if cp1 < 0 or cp2 < 0 or cp3 < 0:
-                        #if (cp1 < 0 or cp2 < 0 or cp3 < 0) and (acp) > 0:
+                        #if cp1 < 0 or cp2 < 0 or cp3 < 0:
+                        if (cp1 < 0 or cp2 < 0 or cp3 < 0) and (acp) > 0:
                             plot_one_box(xyxy, im0, label=label, color=(0,0,255)) # red   # point_n is on one side
                             cv2.putText(im0,"Alarm!!", (40,40),cv2.FONT_HERSHEY_SIMPLEX, 1.6, (0,0,255), 3)
                             cv2.circle(im0,(int(xn),int(yn)),2,(0,0,255),-1)
