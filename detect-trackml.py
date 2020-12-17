@@ -233,10 +233,6 @@ def detect(save_img=False):
                             continue
                         if label == 'backpack' or label == 'suitcase' or label == 'train':
                             plot_one_box(xyxy, im0, label=label, color=(0,0,0))
-                        #elif label == 'suitcase':
-                        #    plot_one_box(xyxy, im0, label=label, color=(0,0,0))
-                        #elif label == 'train':
-                        #    plot_one_box(xyxy, im0, label=label, color=(0,0,0))
                         #if cp1 < 0 or cp2 < 0 or cp3 < 0:
                         elif (cp1 < 0 or cp2 < 0 or cp3 < 0) and (acp) > 0:
                             plot_one_box(xyxy, im0, label=label, color=(0,0,255)) # red   # point_n is on one side
