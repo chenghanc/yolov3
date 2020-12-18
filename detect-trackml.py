@@ -232,7 +232,8 @@ def detect(save_img=False):
                         if label != 'person' and label != 'backpack' and label != 'suitcase' and label != 'handbag' and label != 'chair' and \
                               label != 'bicycle' and label != 'umbrella' and label != 'train':
                             continue
-                        if label == 'backpack' or label == 'suitcase' or label == 'train':
+                        if label == 'backpack' or label == 'suitcase' or label == 'handbag' or label == 'chair' or label == 'bicycle' or \
+                              label == 'umbrella' or label == 'train':
                             plot_one_box(xyxy, im0, label=label, color=(0,0,0))
                         #if cp1 < 0 or cp2 < 0 or cp3 < 0:
                         elif (cp1 < 0 or cp2 < 0 or cp3 < 0) and (acp) > 0:
