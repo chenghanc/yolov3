@@ -1,12 +1,12 @@
 
 ## People do not stand behind the yellow line on the train platform
 
-Design an algorithm that is combined with **Yolov4** and check if people do not stand behind the yellow line and thus an alarm notification can be activated. The method proposed in this scenario can be easily generalized to **intrusion detection** as long as the area is well defined and CCTV is fixed. This repo adds new inference code `detect-track.py` for **Yolov4** in PyTorch. The code works on Linux, MacOS and Windows.
+Design an algorithm that is combined with **Yolov4** and check if people do not stand behind the yellow line and thus an alarm notification can be activated. The method proposed in this scenario can be easily generalized to **intrusion detection** as long as the area is well defined and CCTV is fixed. This repo adds new inference code `detect-trackml.py` for **Yolov4** in PyTorch. The code works on Linux, MacOS and Windows.
 
 ## Inference
 
 ```bash
-python detect-track.py --names data/coco.names --cfg cfg/yolov4.cfg --weights yolov4.weights --img-size 608 --conf-thres 0.4 --iou-thres 0.6 --source CDS32-1300-1400cut3.mp4 --view-img
+python detect-trackml.py --names data/coco.names --cfg cfg/yolov4.cfg --weights yolov4.weights --img-size 608 --conf-thres 0.4 --iou-thres 0.6 --source CDS32-1300-1400cut3.mp4 --view-img
 ```
 
 - Image:  `--source file.jpg`
