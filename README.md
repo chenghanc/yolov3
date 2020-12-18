@@ -83,13 +83,13 @@ else:
 
 - #### Use the sign of the determinant of vectors (AB, AM), where M(X,Y) is the query point:
 
+    * It is  `0`: on the line 
+    * It is `+1`: on one side
+    * It is `-1`: on the other side
+
 ```
 position = sign((Bx - Ax) * (Y - Ay) - (By - Ay) * (X - Ax))
 ```
-
-  * It is  `0`: on the line 
-  * It is `+1`: on one side
-  * It is `-1`: on the other side
 
 ---
 
