@@ -81,6 +81,13 @@ else:
 .
 ```
 
+- #### Use the sign of the determinant of vectors (AB, AM), where M(X,Y) is the query point:
+
+```
+position = sign((Bx - Ax) * (Y - Ay) - (By - Ay) * (X - Ax))
+```
+
+
 ---
 
 ## Example
