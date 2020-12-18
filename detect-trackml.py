@@ -229,7 +229,8 @@ def detect(save_img=False):
                         #print(x6-x5,x8-x7)
                         # Counting Person
                         #cv2.putText(im0,"Counting Person = " + str(int(n)), (400,20),cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0,0,0), 1)
-                        if label != 'person' and label != 'backpack' and label != 'suitcase' and label != 'train':
+                        if label != 'person' and label != 'backpack' and label != 'suitcase' and label != 'handbag' and label != 'chair' and \
+                              label != 'bicycle' and label != 'umbrella' and label != 'train':
                             continue
                         if label == 'backpack' or label == 'suitcase' or label == 'train':
                             plot_one_box(xyxy, im0, label=label, color=(0,0,0))
