@@ -87,6 +87,9 @@ else:
 position = sign((Bx - Ax) * (Y - Ay) - (By - Ay) * (X - Ax))
 ```
 
+    * It is  `0`: on the line 
+    * It is `+1`: on one side
+    * It is `-1`: on the other side
 
 ---
 
